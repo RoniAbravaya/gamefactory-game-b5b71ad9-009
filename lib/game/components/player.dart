@@ -1,63 +1,61 @@
 import 'package:flame/components.dart';
-import 'package:flame/input.dart';
+import 'package:flame/geometry.dart';
 import 'package:flame/sprite.dart';
 
-/// The player character in the puzzle game.
-class Player extends SpriteAnimationComponent with TapCallbacks, CollisionCallbacks {
-  /// The player's current health/lives.
-  int _health = 3;
+/// The Player component for the puzzle game.
+class Player extends SpriteAnimationComponent with HasHitboxes, Collidable {
+  /// The player's current health.
+  int _health = 100;
 
-  /// The player's current score.
-  int _score = 0;
+  /// The maximum health the player can have.
+  final int maxHealth = 100;
 
-  /// Constructs a new [Player] instance.
-  Player({
-    required Vector2 position,
-    required Vector2 size,
-    required SpriteAnimation idleAnimation,
-    required SpriteAnimation walkingAnimation,
-    required SpriteAnimation jumpingAnimation,
-  }) : super(
+  /// The duration of the player's invulnerability frames after taking damage.
+  final double invulnerabilityDuration = 2.0;
+
+  /// The timer for the player's invulnerability frames.
+  double _invulnerabilityTimer = 0.0;
+
+  /// Whether the player is currently invulnerable.
+  bool get isInvulnerable => _invulnerabilityTimer > 0.0;
+
+  /// Constructs a new Player instance.
+  Player(Vector2 position, Vector2 size, SpriteAnimation animation)
+      : super(
           position: position,
           size: size,
-          animation: idleAnimation,
-        );
-
-  @override
-  void onTapDown(TapDownInfo info) {
-    // Handle player input, such as jumping.
-    _jump();
+          animation: animation,
+        ) {
+    addHitbox(HitboxRectangle());
   }
 
   @override
-  void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
-    // Handle player collisions, such as taking damage.
-    _takeDamage();
-  }
+  void update(double dt) {
+    super.update(dt);
 
-  /// Moves the player.
-  void _move(Vector2 direction) {
-    // Apply physics-based movement to the player.
-    position += direction;
-  }
-
-  /// Jumps the player.
-  void _jump() {
-    // Apply a jump force to the player.
-    // Update the player's animation to the jumping state.
-  }
-
-  /// Decrements the player's health.
-  void _takeDamage() {
-    _health--;
-    if (_health <= 0) {
-      // Handle player death.
+    // Update invulnerability timer
+    if (_invulnerabilityTimer > 0.0) {
+      _invulnerabilityTimer -= dt;
     }
   }
 
-  /// Increments the player's score.
-  void _increaseScore(int amount) {
-    _score += amount;
-    // Update the game's score display.
+  /// Damages the player, reducing their health.
+  /// Returns true if the player was damaged, false if they were invulnerable.
+  bool takeDamage(int amount) {
+    if (isInvulnerable) {
+      return false;
+    }
+
+    _health = (_health - amount).clamp(0, maxHealth);
+    _invulnerabilityTimer = invulnerabilityDuration;
+    return true;
   }
+
+  /// Heals the player, increasing their health up to the maximum.
+  void heal(int amount) {
+    _health = (_health + amount).clamp(0, maxHealth);
+  }
+
+  /// Checks if the player is dead (health is 0 or less).
+  bool get isDead => _health <= 0;
 }
