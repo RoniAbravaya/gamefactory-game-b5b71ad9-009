@@ -1,0 +1,246 @@
+{
+  "levels": [
+    {
+      "level_number": 1,
+      "name": "First Steps",
+      "is_free": true,
+      "unlock_requirement": "none",
+      "difficulty": 0.05,
+      "time_limit_seconds": null,
+      "target_score": 500,
+      "obstacles": {
+        "type": "static_block",
+        "count": 5,
+        "speed": 0
+      },
+      "collectibles": {
+        "type": "star",
+        "count": 3,
+        "value": 100
+      },
+      "special_features": [
+        "tutorial_hints"
+      ],
+      "background_theme": "sunny_meadow",
+      "music_track": "happy_tune_01"
+    },
+    {
+      "level_number": 2,
+      "name": "Learning to Leap",
+      "is_free": true,
+      "unlock_requirement": "none",
+      "difficulty": 0.1,
+      "time_limit_seconds": null,
+      "target_score": 1000,
+      "obstacles": {
+        "type": "moving_block",
+        "count": 5,
+        "speed": 1
+      },
+      "collectibles": {
+        "type": "star",
+        "count": 5,
+        "value": 150
+      },
+      "special_features": [],
+      "background_theme": "sunny_meadow",
+      "music_track": "happy_tune_02"
+    },
+    {
+      "level_number": 3,
+      "name": "The First Challenge",
+      "is_free": true,
+      "unlock_requirement": "none",
+      "difficulty": 0.15,
+      "time_limit_seconds": null,
+      "target_score": 1500,
+      "obstacles": {
+        "type": "rotating_block",
+        "count": 5,
+        "speed": 1
+      },
+      "collectibles": {
+        "type": "star",
+        "count": 7,
+        "value": 200
+      },
+      "special_features": [],
+      "background_theme": "sunny_meadow",
+      "music_track": "happy_tune_03"
+    },
+    {
+      "level_number": 4,
+      "name": "Rising Difficulty",
+      "is_free": false,
+      "unlock_requirement": "rewarded_ad",
+      "difficulty": 0.2,
+      "time_limit_seconds": 120,
+      "target_score": 2000,
+      "obstacles": {
+        "type": "static_block",
+        "count": 10,
+        "speed": 0
+      },
+      "collectibles": {
+        "type": "star",
+        "count": 10,
+        "value": 250
+      },
+      "special_features": [
+        "time_challenge"
+      ],
+      "background_theme": "cloudy_heights",
+      "music_track": "mystery_tune_01"
+    },
+    {
+      "level_number": 5,
+      "name": "Midway Madness",
+      "is_free": false,
+      "unlock_requirement": "rewarded_ad",
+      "difficulty": 0.3,
+      "time_limit_seconds": 120,
+      "target_score": 2500,
+      "obstacles": {
+        "type": "moving_block",
+        "count": 15,
+        "speed": 2
+      },
+      "collectibles": {
+        "type": "gem",
+        "count": 5,
+        "value": 500
+      },
+      "special_features": [
+        "time_challenge",
+        "speed_boost"
+      ],
+      "background_theme": "cloudy_heights",
+      "music_track": "mystery_tune_02"
+    },
+    {
+      "level_number": 6,
+      "name": "Twists and Turns",
+      "is_free": false,
+      "unlock_requirement": "rewarded_ad",
+      "difficulty": 0.4,
+      "time_limit_seconds": 90,
+      "target_score": 3000,
+      "obstacles": {
+        "type": "rotating_block",
+        "count": 20,
+        "speed": 2
+      },
+      "collectibles": {
+        "type": "gem",
+        "count": 7,
+        "value": 550
+      },
+      "special_features": [
+        "time_challenge",
+        "invisibility_mode"
+      ],
+      "background_theme": "night_sky",
+      "music_track": "mystery_tune_03"
+    },
+    {
+      "level_number": 7,
+      "name": "The Labyrinth",
+      "is_free": false,
+      "unlock_requirement": "rewarded_ad",
+      "difficulty": 0.5,
+      "time_limit_seconds": 90,
+      "target_score": 3500,
+      "obstacles": {
+        "type": "maze_block",
+        "count": 25,
+        "speed": 2
+      },
+      "collectibles": {
+        "type": "gem",
+        "count": 9,
+        "value": 600
+      },
+      "special_features": [
+        "time_challenge",
+        "maze_puzzle"
+      ],
+      "background_theme": "night_sky",
+      "music_track": "mystery_tune_04"
+    },
+    {
+      "level_number": 8,
+      "name": "Rapid Reflections",
+      "is_free": false,
+      "unlock_requirement": "rewarded_ad",
+      "difficulty": 0.6,
+      "time_limit_seconds": 60,
+      "target_score": 4000,
+      "obstacles": {
+        "type": "mirror_block",
+        "count": 30,
+        "speed": 3
+      },
+      "collectibles": {
+        "type": "gem",
+        "count": 11,
+        "value": 650
+      },
+      "special_features": [
+        "time_challenge",
+        "reflection_puzzle"
+      ],
+      "background_theme": "cosmic_void",
+      "music_track": "mystery_tune_05"
+    },
+    {
+      "level_number": 9,
+      "name": "The Gauntlet",
+      "is_free": false,
+      "unlock_requirement": "rewarded_ad",
+      "difficulty": 0.75,
+      "time_limit_seconds": 60,
+      "target_score": 4500,
+      "obstacles": {
+        "type": "all_types",
+        "count": 35,
+        "speed": 3
+      },
+      "collectibles": {
+        "type": "diamond",
+        "count": 5,
+        "value": 1000
+      },
+      "special_features": [
+        "time_challenge",
+        "ultimate_test"
+      ],
+      "background_theme": "cosmic_void",
+      "music_track": "mystery_tune_06"
+    },
+    {
+      "level_number": 10,
+      "name": "Mastermind",
+      "is_free": false,
+      "unlock_requirement": "rewarded_ad",
+      "difficulty": 0.9,
+      "time_limit_seconds": 45,
+      "target_score": 5000,
+      "obstacles": {
+        "type": "all_types",
+        "count": 40,
+        "speed": 4
+      },
+      "collectibles": {
+        "type": "diamond",
+        "count": 7,
+        "value": 1100
+      },
+      "special_features": [
+        "time_challenge",
+        "final_boss"
+      ],
+      "background_theme": "cosmic_void",
+      "music_track": "mystery_tune_07"
+    }
+  ]
+}
